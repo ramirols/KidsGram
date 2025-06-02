@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { FiMenu, FiX, FiHome, FiBook, FiUser } from "react-icons/fi";
@@ -15,6 +15,32 @@ const navItems = [
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navItems.map(item => item.href.substring(1));
+      
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleNavClick = (href: string) => {
+    setIsOpen(false);
+    setActiveSection(href.substring(1));
+  };
 
   return (
     <motion.header
@@ -38,7 +64,10 @@ export const Header = () => {
               <motion.a
                 key={idx}
                 href={item.href}
-                className={`flex items-center gap-1 text-gray-700 hover:text-black`}
+                onClick={() => handleNavClick(item.href)}
+                className={`flex items-center gap-1 text-gray-700 hover:text-black ${
+                  activeSection === item.href.substring(1) ? 'font-bold text-black' : ''
+                }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -67,15 +96,17 @@ export const Header = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ type: "spring", stiffness: 200, damping: 20 }}
-                className="absolute top-16 left-0 w-full bg-sky-200 p-4 flex flex-col space-y-4 md:hidden z-50 shadow-md"
+                className="absolute top-16 left-0 w-full bg-primary p-4 flex flex-col space-y-4 md:hidden z-50 shadow-md"
               >
                 <div className="container">
                   {navItems.map((item, idx) => (
                     <motion.a
                       key={idx}
                       href={item.href}
-                      className={`flex items-center gap-2 text-gray-700 hover:text-black ${item.label === "Página 2" ? "font-bold text-black" : ""
-                        }`}
+                      onClick={() => handleNavClick(item.href)}
+                      className={`flex items-center gap-2 text-gray-700 hover:text-black ${
+                        activeSection === item.href.substring(1) ? 'font-bold text-black' : ''
+                      }`}
                       whileHover={{ scale: 1.02, x: 10 }}
                       whileTap={{ scale: 0.98 }}
                     >
