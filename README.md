@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kidsgram | Explora las Regiones del Perú 🇵🇪
 
-## Getting Started
+Una plataforma educativa interactiva diseñada para que los niños descubran y aprendan sobre las maravillosas regiones del Perú.
 
-First, run the development server:
+## 🎯 Descripción
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Kidsgram es una experiencia educativa única que permite a los niños explorar las tres regiones principales del Perú:
+- Costa 🌊
+- Sierra ⛰️
+- Selva 🌴
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A través de una interfaz interactiva y amigable, los niños pueden:
+- Conocer a personajes amigables que los guiarán en su aventura
+- Ver videos educativos sobre la fauna característica (llama, tucán, cuy)
+- Explorar las características únicas de cada región
+- Aprender sobre la diversa cultura y geografía peruana
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Características Principales
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Diseño Responsivo**: Optimizado para diferentes dispositivos
+- **Interfaz Amigable**: Diseñada pensando en los niños
+- **Contenido Educativo**: Videos y secciones informativas
+- **Personajes Guía**: Acompañantes que hacen el aprendizaje más divertido
+- **Experiencia Interactiva**: Secciones dinámicas y atractivas
 
-## Learn More
+## 🛠️ Tecnologías Utilizadas
 
-To learn more about Next.js, take a look at the following resources:
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- PostCSS
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔒 Seguridad
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+El sitio implementa las mejores prácticas de seguridad:
+- Políticas de seguridad de contenido
+- Headers de seguridad optimizados
+- HTTPS forzado
+- Protección contra ataques comunes
 
-## Deploy on Vercel
+## 🌐 SEO y Metadata
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Optimizado para motores de búsqueda
+- Open Graph tags para compartir en redes sociales
+- Schema.org markup para mejor indexación
+- Meta tags específicos para contenido educativo
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🎨 Diseño
+
+- Fuentes personalizadas: Geist y Geist Mono
+- Paleta de colores adaptada para niños
+- Tema principal: #E25C1C
+- Imágenes y recursos optimizados
+
+## 📱 Compatibilidad
+
+- Dispositivos móviles
+- Tablets
+- Computadoras de escritorio
+- Navegadores modernos
+
+## 🔗 Enlaces
+
+- Sitio web: [https://kids-gram.vercel.app/](https://kids-gram.vercel.app/)
+- Imagen OG: [Ver imagen](https://kids-gram.vercel.app/og-image.jpg)
+
+## 🌟 Características Futuras
+
+- Más contenido interactivo
+- Nuevos personajes y regiones
+- Juegos educativos
+- Sección de actividades descargables
+
+## 📝 Licencia
+
+© 2024 Kidsgram. Todos los derechos reservados.
+
+---
+
+Desarrollado con ❤️ para los niños del Perú por RamiroLs | UNMSM
