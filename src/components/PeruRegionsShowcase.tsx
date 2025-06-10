@@ -201,37 +201,37 @@ export default function PeruRegionsShowcase() {
                             </button>
 
                             {/* Imagen del popup */}
-                            <div className="relative w-full h-[50vh]">
+                            <div className="relative w-full h-[30vh] sm:h-[50vh]">
                                 <Image
                                     src={regions[selectedRegion].popupImage}
                                     alt={regions[selectedRegion].name}
                                     fill
-                                    style={{ objectFit: 'cover' }}
+                                    style={{ objectFit: 'contain', objectPosition: 'center' }}
                                     className="rounded-lg shadow-xl"
                                 />
+
+                                {/* Controles de audio - Ahora en la esquina inferior derecha */}
+                                <div className="absolute bottom-4 right-4 flex gap-2">
+                                    <button
+                                        onClick={toggleMute}
+                                        className="bg-black text-white hover:text-orange-500 rounded-full p-2 transition-all"
+                                        title={isMuted ? "Activar audio" : "Silenciar audio"}
+                                    >
+                                        {isMuted ? <FaVolumeMute size={24} /> : <FaVolumeUp size={24} />}
+                                    </button>
+                                    <button
+                                        onClick={replayAudio}
+                                        className="bg-black text-white hover:text-orange-500 rounded-full p-2 transition-all"
+                                        title="Repetir audio"
+                                    >
+                                        <FaRedo size={24} />
+                                    </button>
+                                </div>
                             </div>
 
-                            {/* Controles de audio */}
-                            <div className="flex justify-center gap-4 mt-4 md:hidden">
-                                <button
-                                    onClick={toggleMute}
-                                    className="bg-orange-500 p-3 rounded-full text-white hover:bg-orange-600 transition-colors cursor-pointer z-10"
-                                    title={isMuted ? "Activar audio" : "Silenciar audio"}
-                                >
-                                    {isMuted ? <FaVolumeMute size={24} className="cursor-pointer" /> : <FaVolumeUp size={24} className="cursor-pointer" />}
-                                </button>
-                                <button
-                                    onClick={replayAudio}
-                                    className="bg-orange-500 p-3 rounded-full text-white hover:bg-orange-600 transition-colors cursor-pointer z-10"
-                                    title="Repetir audio"
-                                >
-                                    <FaRedo size={24} className="cursor-pointer" />
-                                </button>
-                            </div>
-
-                            <audio 
+                            <audio
                                 ref={audioRef}
-                                id={`audio-${regions[selectedRegion].name}`} 
+                                id={`audio-${regions[selectedRegion].name}`}
                                 autoPlay
                             >
                                 <source src={regions[selectedRegion].audio} type="audio/mpeg" />
