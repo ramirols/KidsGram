@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import Head from "next/head";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
@@ -13,6 +14,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#E25C1C',
+};
+
 export const metadata: Metadata = {
   title: "Kidsgram | Explora las Regiones del Perú",
   description: "Descubre la magia de las regiones del Perú - Costa, Sierra y Selva - a través de una experiencia educativa única para niños. Aprende sobre nuestra diversa cultura, geografía y tradiciones.",
@@ -26,10 +33,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_PE",
     siteName: "Kidsgram",
-    url: "https://kidsgram.pe",
+    url: "https://kids-gram.vercel.app/",
     images: [
       {
-        url: "https://kidsgram.pe/og-image.jpg", // Asegúrate de tener esta imagen en /public
+        url: "https://kids-gram.vercel.app/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Mapa educativo del Perú para niños",
@@ -40,16 +47,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Kidsgram | Explora las Regiones del Perú",
     description: "Descubre la magia de las regiones del Perú - Costa, Sierra y Selva - a través de una experiencia educativa única para niños.",
-    images: ["https://kidsgram.pe/og-image.jpg"],
+    images: ["https://kids-gram.vercel.app/og-image.jpg"],
   },
   robots: {
     index: true,
     follow: true,
   },
-  themeColor: "#E25C1C",
-  viewport: "width=device-width, initial-scale=1",
   alternates: {
-    canonical: "https://kidsgram.pe",
+    canonical: "https://kids-gram.vercel.app/",
   },
 };
 
@@ -60,19 +65,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <head>
+      <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="google-site-verification" content="tu-código-de-verificación" />
-
-        {/* Seguridad y rendimiento */}
+        <meta name="google-site-verification" content="" />
         <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="format-detection" content="telephone=no, email=no, address=no" />
-      </head>
+      </Head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
-
-        {/* SEO adicional: JSON-LD */}
         <Script
           id="json-ld"
           type="application/ld+json"
@@ -81,8 +82,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "EducationalOrganization",
               name: "Kidsgram",
-              url: "https://kidsgram.pe",
-              logo: "https://kidsgram.pe/logo.png", // Asegúrate que exista
+              url: "https://kids-gram.vercel.app/",
+              logo: "https://kids-gram.vercel.app/logo.png",
               description: "Plataforma educativa interactiva para niños sobre el Perú.",
             }),
           }}

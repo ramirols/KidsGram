@@ -3,14 +3,12 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { FiMenu, FiX, FiHome, FiBook, FiUser } from "react-icons/fi";
+import { FiMenu, FiX, FiHome, FiUsers, FiBookOpen } from "react-icons/fi";
 
 const navItems = [
-  { label: "Página 1", icon: <FiHome />, href: "#friends" },
-  { label: "Página 2", icon: <FiBook />, href: "#region" },
-  { label: "Página 3", icon: <FiUser />, href: "#peru" },
-  { label: "Página 4", icon: <FiBook />, href: "#peru-regions" },
-  { label: "Página 5", icon: <FiHome />, href: "#leafy" },
+  { label: "Inicio", icon: <FiHome />, href: "#inicio" },
+  { label: "Conócenos", icon: <FiUsers />, href: "#conocenos" },
+  { label: "Tutoriales", icon: <FiBookOpen />, href: "#tutoriales" },
 ];
 
 export const Header = () => {
@@ -55,7 +53,7 @@ export const Header = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Image src="/logo.png" alt="Logo" width={70} height={70} />
+            <Image src="/logo.png" alt="Logo" width={70} height={70} className='object-cover' />
           </motion.div>
 
           {/* Desktop Menu */}
@@ -98,13 +96,13 @@ export const Header = () => {
                 transition={{ type: "spring", stiffness: 200, damping: 20 }}
                 className="absolute top-16 left-0 w-full bg-primary p-4 flex flex-col space-y-4 md:hidden z-50 shadow-md"
               >
-                <div className="container">
+                <div className="container flex flex-col gap-4 items-center">
                   {navItems.map((item, idx) => (
                     <motion.a
                       key={idx}
                       href={item.href}
                       onClick={() => handleNavClick(item.href)}
-                      className={`flex items-center gap-2 text-gray-700 hover:text-black ${
+                      className={`flex items-center gap-2 text-gray-700 hover:text-black text-lg ${
                         activeSection === item.href.substring(1) ? 'font-bold text-black' : ''
                       }`}
                       whileHover={{ scale: 1.02, x: 10 }}

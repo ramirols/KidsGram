@@ -9,22 +9,23 @@ export default function RegionBanner() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="bg-primary py-10 sm:py-20 relative h-[300px] sm:h-[500px]" 
+            className="w-full relative h-[200px] sm:h-[600px] overflow-hidden bg-primary" 
             id="region"
         >
             <motion.div 
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="container"
+                className="absolute inset-0 w-full h-full"
             >
                 <Image
-                    src="/bg-image-section-2.png"
+                    src="/bg-image-section-2.jpg"
                     alt="Costa Sierra Selva"
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                    sizes="100vw"
                     priority
-                    className="object-cover object-center"
+                    className="object-contain sm:object-cover object-center w-full h-full"
+                    quality={100}
                 />
             </motion.div>
         </motion.section>

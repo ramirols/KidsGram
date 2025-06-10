@@ -4,7 +4,16 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   reactStrictMode: true,
   images: {
-    domains: ["picsum.photos", "kidsgram.pe"],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+      },
+      {
+        protocol: 'https',
+        hostname: 'https://kids-gram.vercel.app/',
+      },
+    ],
   },
   headers: async () => [
     {

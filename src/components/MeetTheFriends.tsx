@@ -9,8 +9,8 @@ export default function MeetTheFriends() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="bg-primary py-20 md:px-20 relative"
-            id="friends"
+            className="bg-primary py-12 relative"
+            id="inicio"
         >
             <div className="container flex flex-col md:flex-row items-center gap-10">
                 {/* Texto */}
@@ -51,21 +51,21 @@ export default function MeetTheFriends() {
                             whileTap={{ scale: 0.9 }}
                             transition={{ type: "spring", stiffness: 400, damping: 17 }}
                         >
-                            <Image src="/llama.png" alt="Imagen de una llama" width={120} height={120} />
+                            <Image src="/llama.png" alt="Imagen de una llama" width={100} height={100} className='w-full h-full object-cover' />
                         </motion.div>
                         <motion.div
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
                             transition={{ type: "spring", stiffness: 400, damping: 17 }}
                         >
-                            <Image src="/capibara.png" alt="Imagen de un capibara" width={120} height={120} />
+                            <Image src="/capibara.png" alt="Imagen de un capibara" width={100} height={100} className='w-full h-full object-cover' />
                         </motion.div>
                         <motion.div
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
                             transition={{ type: "spring", stiffness: 400, damping: 17 }}
                         >
-                            <Image src="/tucan.png" alt="Imagen de un tucán" width={120} height={120} />
+                            <Image src="/tucan.png" alt="Imagen de un tucán" width={100} height={100} className='w-full h-full object-cover' />
                         </motion.div>
                     </div>
                 </motion.div>
