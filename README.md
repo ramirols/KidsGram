@@ -74,7 +74,7 @@ El sitio implementa las mejores prácticas de seguridad:
 
 ## 📝 Licencia
 
-© 2024 Kidsgram. Todos los derechos reservados.
+© 2025 Kidsgram. Todos los derechos reservados.
 
 ---
 
