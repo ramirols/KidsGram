@@ -63,7 +63,7 @@ El sitio implementa las mejores prácticas de seguridad:
 ## 🔗 Enlaces
 
 - Sitio web: [https://kids-gram.vercel.app/](https://kids-gram.vercel.app/)
-- Imagen OG: [Ver imagen](https://kids-gram.vercel.app/og-image.jpg)
+- Logo del Sitio Web: [Ver imagen](https://kids-gram.vercel.app/logo.png)
 
 ## 🌟 Características Futuras
 
@@ -78,4 +78,4 @@ El sitio implementa las mejores prácticas de seguridad:
 
 ---
 
-Desarrollado con ❤️ para los niños del Perú por RamiroLs | UNMSM
+Desarrollado con ❤️ para los niños del Perú por RamiroLs | Universidad Nacional Mayor de San Marcos
