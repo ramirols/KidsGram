@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useRef } from 'react';
 import { IoClose } from 'react-icons/io5';
 import { FaVolumeMute, FaVolumeUp, FaRedo } from 'react-icons/fa';
+import { Tooltip } from 'react-tooltip';
 
 const regions = [
     {
@@ -214,15 +215,17 @@ export default function PeruRegionsShowcase() {
                                 <div className="absolute bottom-4 right-4 flex gap-2">
                                     <button
                                         onClick={toggleMute}
-                                        className="bg-black text-white hover:text-orange-500 rounded-full p-2 transition-all"
-                                        title={isMuted ? "Activar audio" : "Silenciar audio"}
+                                        className="bg-black text-white hover:text-orange-500 rounded-full p-2 transition-all cursor-pointer"
+                                        data-tooltip-id="audio-tooltip"
+                                        data-tooltip-content={isMuted ? "Activar audio" : "Silenciar audio"}
                                     >
                                         {isMuted ? <FaVolumeMute size={24} /> : <FaVolumeUp size={24} />}
                                     </button>
                                     <button
                                         onClick={replayAudio}
-                                        className="bg-black text-white hover:text-orange-500 rounded-full p-2 transition-all"
-                                        title="Repetir audio"
+                                        className="bg-black text-white hover:text-orange-500 rounded-full p-2 transition-all cursor-pointer"
+                                        data-tooltip-id="audio-tooltip"
+                                        data-tooltip-content="Repetir audio"
                                     >
                                         <FaRedo size={24} />
                                     </button>
@@ -236,6 +239,7 @@ export default function PeruRegionsShowcase() {
                             >
                                 <source src={regions[selectedRegion].audio} type="audio/mpeg" />
                             </audio>
+                            <Tooltip id="audio-tooltip" />
                         </motion.div>
                     </motion.div>
                 )}
