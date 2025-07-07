@@ -64,7 +64,7 @@ const Footer = () => {
                   transition: { duration: 0.2 }
                 }}
               >
-                Desarrollado por: RamiroLs
+                Desarrollado con 💙 por: RamiroLs
               </motion.span>
             </motion.span>
           </motion.div>

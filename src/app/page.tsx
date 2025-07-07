@@ -14,6 +14,7 @@ export default function Home() {
       <VideoSection url="/videos/section-llama-video.mp4" title="Llama" />
       <VideoSection url="/videos/section-tucan-video.mp4" title="Tucán" />
       <VideoSection url="/videos/section-cuy-video.mp4" title="Cuy" />
+      <VideoSection url="/videos/section-lobomarino-video.mp4" title="Lobo Marino" />
       <PeruRegionsShowcase />
       {/*<PeruRegionsDecorated />*/}
       {/*<LeafyBackgroundSection />*/}
